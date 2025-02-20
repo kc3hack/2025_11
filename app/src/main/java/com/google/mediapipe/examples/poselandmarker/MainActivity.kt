@@ -21,16 +21,36 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 //import androidx.navigation.ui.setupWithNavController
-import com.google.mediapipe.examples.poselandmarker.databinding.ActivityMainBinding
+import android.widget.TextView
+//import androidx.appcompat.app.AppCompatActivity
+import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarker
+import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
 
-class MainActivity : AppCompatActivity() {
+import com.google.mediapipe.examples.poselandmarker.databinding.ActivityMainBinding
+//import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
+
+class MainActivity : AppCompatActivity(){
     private lateinit var activityMainBinding: ActivityMainBinding
+    private lateinit var poseLandmarkerHelper: PoseLandmarkerHelper
+    private var results: PoseLandmarkerResult? = null
+
     private val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+
+        //val overlayView = findViewById<OverlayView>(R.id.OverLay)
+        //overlayView.listener = this
+
+        //val textView: TextView = findViewById(R.id.view_test)
+
+        // TextViewに変数の値を表示
+
+        //textView.text = "messsage2"
+        //Thread.sleep(1000)
+        //textView.text = "messsage3"
 
         //val navHostFragment =
         //    supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
@@ -42,7 +62,37 @@ class MainActivity : AppCompatActivity() {
         //}
     }
 
+
+
+    /*
+    // PoseLandmarkerHelper から結果を受け取る
+    override fun onResults(resultBundle: PoseLandmarkerHelper.ResultBundle) {
+        results = poseLandmarkerResults
+        results?.let { poseLandmarkerResult ->
+            for(landmark in poseLandmarkerResult.landmarks()) {
+                val normalizedLandmark_13=landmark[13]
+                println("正規化X")
+                val number = normalizedLandmark_13.x()
+
+                val message = "landmark13.x: $number"
+
+// ここで呼び出し
+
+
+                println(message);
+
+                // TextViewに変数の値を表示
+                val textView: TextView = findViewById(R.id.view_test)
+                textView.text = message
+                println(normalizedLandmark_13.x())
+                println("正規化Y")
+                println(normalizedLandmark_13.y())
+
+    }
+    */
     override fun onBackPressed() {
         finish()
     }
+
+
 }
