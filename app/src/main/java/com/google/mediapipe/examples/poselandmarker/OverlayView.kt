@@ -23,6 +23,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.google.mediapipe.examples.app.DataHolder
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarker
 import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
@@ -98,10 +99,14 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
         results?.let { poseLandmarkerResult ->
             for(landmark in poseLandmarkerResult.landmarks()) {
                 val normalizedLandmark=landmark[1]
-                    println("正規化X")
-                    println(normalizedLandmark.x())
-                    println("正規化Y")
-                    println(normalizedLandmark.y())
+                    val test_x = normalizedLandmark.x()
+                    val test_y = normalizedLandmark.y()
+                    println("正規化X=$test_x,Y=$test_y")
+//                    println(normalizedLandmark.x())
+//                    println("正規化Y")
+//                    println(normalizedLandmark.y())
+                    DataHolder.message = "$test_y"
+
             }}
 
         this.imageHeight = imageHeight

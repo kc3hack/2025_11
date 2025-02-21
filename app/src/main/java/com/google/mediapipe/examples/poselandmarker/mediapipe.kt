@@ -16,14 +16,17 @@
 
 package com.google.mediapipe.examples.poselandmarker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 //import androidx.navigation.ui.setupWithNavController
 import com.google.mediapipe.examples.poselandmarker.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class mediapipe : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private val viewModel : MainViewModel by viewModels()
 
@@ -40,9 +43,28 @@ class MainActivity : AppCompatActivity() {
             // ignore the reselection
 
         //}
+
+        val text_watashi: TextView = findViewById(R.id.ataiwatashi_test)
+        val message = intent.getStringExtra("message")
+        text_watashi.text = message;
+
+        val button: Button = findViewById(R.id.btn_test) // レイアウトにあるボタンID
+        button.setOnClickListener {
+            val intent = Intent(this, recom::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val button2: Button = findViewById(R.id.btn_tomap) // レイアウトにあるボタンID
+
+        button2.setOnClickListener {
+            val intent = Intent(this, map::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
-    override fun onBackPressed() {
-        finish()
-    }
+//    override fun onBackPressed() {
+//        finish()
+//    }
 }
