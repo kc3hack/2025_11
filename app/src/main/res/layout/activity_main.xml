@@ -33,7 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?android:attr/actionBarSize"
-            android:background="@android:color/transparent"
+            android:background="@android:color/white"
+            android:backgroundTint="#80FFFFFF"
             android:keepScreenOn="true"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph"
@@ -58,6 +59,8 @@
         android:layout_marginBottom="13dp"
         android:text="TextView"
         android:textSize="24sp"
+        android:background="#FFFFFFFF"
         app:layout_anchor="@+id/relativeLayout"
         app:layout_anchorGravity="bottom|center" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

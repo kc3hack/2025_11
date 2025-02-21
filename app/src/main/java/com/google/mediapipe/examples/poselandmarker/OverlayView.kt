@@ -28,11 +28,14 @@ import androidx.core.content.ContextCompat
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarker
 import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
+import java.security.KeyStore.TrustedCertificateEntry
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.atan2
 import kotlin.math.PI
 //import android.widget.TextView
+
+
 
 class OverlayView(context: Context?, attrs: AttributeSet?) :
     View(context, attrs) {
@@ -48,6 +51,16 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
     private var imageWidth: Int = 1
     private var imageHeight: Int = 1
 
+    private var status1:Int=0
+    private var status2:Int=0
+    private var status3:Int=0
+    var pre_status_x:Float=1f
+    var pre_status_y:Float=1f
+    var pre_status_flag=0
+    var status_flag=0
+    var final_status_x:Float=1f
+    var final_status_y:Float=1f
+    //private var pre_status_flag:Boolean=True
     init {
         initPaints()
     }
@@ -183,15 +196,57 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
                         "左手首.y: $number16_y\n" +
                         "左手首.z: $number16_z\n"
                 var status_message="準備中"
-                if(thetaDegrees2<=30){
+                if(thetaDegrees2<=40 && number11_y>number15_y){ //手首の方が肩より上側かつ角度が40度以下
                      status_message="構え"
+                     status1+=1
+                     status2=0
+                     status3=0
 
-                }else if(thetaDegrees2<=90){
-                     status_message="動作中"
+                }else if(number13_y>number11_y+0.1|| thetaDegrees2>130){
+                    status_message="終了"
+                    status1=0
+                    status2=0
+                    status3+=1
 
                 }else{
-                     status_message="終了"
+
+                    status_message="動作中"
+                    status1=0
+                    status2+=1
+                    status3=0
                 }
+                println("これを下の画面にわたすよ、正規表現のx軸とy軸だよ x=$number15_x y=$number15_y")
+                println("status_test1:$status1 2:$status2 3:$status3")
+                if(pre_status_flag==0){
+                    status_message+="    構えて！！"
+                }else if(status_flag==0){
+                    status_message+="    投げて！！"
+                }
+                if(status1>=20){
+                    pre_status_x=number15_x
+                    pre_status_y=number15_y
+                    pre_status_flag=1
+
+                }
+                if(pre_status_flag==1 &&status3>=20){
+                    final_status_x=number15_x
+                    final_status_y=number15_y
+                    status_flag=1
+                }
+
+
+                if(status_flag==1){
+                    final_status_x= (pre_status_x+(0.5*(final_status_x-pre_status_x))).toFloat()
+                    final_status_y= (pre_status_y+(0.5*(final_status_y-pre_status_y))).toFloat()
+                    val latitude=33.436+final_status_x*(35.777 - 33.436)
+                    val longitude=134.235+final_status_y*(136.925 - 134.255)
+
+                    println("これを次の画面にわたすよ、着弾点の緯度と経度だよ　緯度=$latitude 経度=$longitude")
+                    status_message+="    終了！！"
+                    //遷移処理書いたらstatus_flagを0に戻す
+
+                }
+
 
                 val textView: TextView =
                     (context as? Activity)?.findViewById(R.id.view_test) ?: return
