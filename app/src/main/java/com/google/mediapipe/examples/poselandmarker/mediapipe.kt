@@ -20,33 +20,54 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
 //import androidx.navigation.ui.setupWithNavController
-import com.google.mediapipe.examples.poselandmarker.databinding.ActivityMainBinding
+import android.widget.TextView
+//import androidx.appcompat.app.AppCompatActivity
+import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarker
+import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
 
-class mediapipe : AppCompatActivity() {
+import com.google.mediapipe.examples.poselandmarker.databinding.ActivityMainBinding
+//import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
+
+class mediapipe : AppCompatActivity(){
     private lateinit var activityMainBinding: ActivityMainBinding
+    private lateinit var poseLandmarkerHelper: PoseLandmarkerHelper
+    private var results: PoseLandmarkerResult? = null
+
     private val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_main);
         setContentView(activityMainBinding.root)
+
+        //val overlayView = findViewById<OverlayView>(R.id.OverLay)
+        //overlayView.listener = this
+
+        //val textView: TextView = findViewById(R.id.view_test)
+
+        // TextViewに変数の値を表示
+
+        //textView.text = "messsage2"
+        //Thread.sleep(1000)
+        //textView.text = "messsage3"
 
         //val navHostFragment =
         //    supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         //val navController = navHostFragment.navController
         //activityMainBinding.navigation.setupWithNavController(navController)
         //activityMainBinding.navigation.setOnNavigationItemReselectedListener {
-            // ignore the reselection
+        // ignore the reselection
 
         //}
 
+        // 値渡しのテスト
         val text_watashi: TextView = findViewById(R.id.ataiwatashi_test)
         val message = intent.getStringExtra("message")
-        text_watashi.text = message;
+        text_watashi.text = message
 
         val button: Button = findViewById(R.id.btn_test) // レイアウトにあるボタンID
         button.setOnClickListener {
@@ -56,7 +77,6 @@ class mediapipe : AppCompatActivity() {
         }
 
         val button2: Button = findViewById(R.id.btn_tomap) // レイアウトにあるボタンID
-
         button2.setOnClickListener {
             val intent = Intent(this, map::class.java)
             startActivity(intent)
@@ -64,7 +84,37 @@ class mediapipe : AppCompatActivity() {
         }
     }
 
-//    override fun onBackPressed() {
-//        finish()
-//    }
+
+
+    /*
+    // PoseLandmarkerHelper から結果を受け取る
+    override fun onResults(resultBundle: PoseLandmarkerHelper.ResultBundle) {
+        results = poseLandmarkerResults
+        results?.let { poseLandmarkerResult ->
+            for(landmark in poseLandmarkerResult.landmarks()) {
+                val normalizedLandmark_13=landmark[13]
+                println("正規化X")
+                val number = normalizedLandmark_13.x()
+
+                val message = "landmark13.x: $number"
+
+// ここで呼び出し
+
+
+                println(message);
+
+                // TextViewに変数の値を表示
+                val textView: TextView = findViewById(R.id.view_test)
+                textView.text = message
+                println(normalizedLandmark_13.x())
+                println("正規化Y")
+                println(normalizedLandmark_13.y())
+
+    }
+    */
+    override fun onBackPressed() {
+        finish()
+    }
+
+
 }

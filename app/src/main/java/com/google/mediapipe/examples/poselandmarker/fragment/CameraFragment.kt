@@ -40,6 +40,7 @@ import com.google.mediapipe.examples.poselandmarker.MainViewModel
 import com.google.mediapipe.examples.poselandmarker.R
 import com.google.mediapipe.examples.poselandmarker.databinding.FragmentCameraBinding
 import com.google.mediapipe.tasks.vision.core.RunningMode
+import com.google.mediapipe.tasks.vision.poselandmarker.PoseLandmarkerResult
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -53,6 +54,7 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
 
     private var _fragmentCameraBinding: FragmentCameraBinding? = null
 
+
     private val fragmentCameraBinding
         get() = _fragmentCameraBinding!!
 
@@ -63,6 +65,8 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+    private var results: PoseLandmarkerResult? = null
+
 
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
@@ -138,165 +142,165 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
 
         // Create the PoseLandmarkerHelper that will handle the inference
         //backgroundExecutor.execute {
-            poseLandmarkerHelper = PoseLandmarkerHelper(
-                context = requireContext(),
-                runningMode = RunningMode.LIVE_STREAM,
-                minPoseDetectionConfidence = viewModel.currentMinPoseDetectionConfidence,
-                minPoseTrackingConfidence = viewModel.currentMinPoseTrackingConfidence,
-                minPosePresenceConfidence = viewModel.currentMinPosePresenceConfidence,
-                currentDelegate = viewModel.currentDelegate,
-                poseLandmarkerHelperListener = this
-            )
-       // }
+        poseLandmarkerHelper = PoseLandmarkerHelper(
+            context = requireContext(),
+            runningMode = RunningMode.LIVE_STREAM,
+            minPoseDetectionConfidence = viewModel.currentMinPoseDetectionConfidence,
+            minPoseTrackingConfidence = viewModel.currentMinPoseTrackingConfidence,
+            minPosePresenceConfidence = viewModel.currentMinPosePresenceConfidence,
+            currentDelegate = viewModel.currentDelegate,
+            poseLandmarkerHelperListener = this
+        )
+        // }
 
         // Attach listeners to UI control widgets
         //initBottomSheetControls()
     }
-/*
-    private fun initBottomSheetControls() {
-        // init bottom sheet settings
+    /*
+        private fun initBottomSheetControls() {
+            // init bottom sheet settings
 
-        fragmentCameraBinding.bottomSheetLayout.detectionThresholdValue.text =
-            String.format(
-                Locale.US, "%.2f", viewModel.currentMinPoseDetectionConfidence
-            )
-        fragmentCameraBinding.bottomSheetLayout.trackingThresholdValue.text =
-            String.format(
-                Locale.US, "%.2f", viewModel.currentMinPoseTrackingConfidence
-            )
-        fragmentCameraBinding.bottomSheetLayout.presenceThresholdValue.text =
-            String.format(
-                Locale.US, "%.2f", viewModel.currentMinPosePresenceConfidence
-            )
-
-        // When clicked, lower pose detection score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.detectionThresholdMinus.setOnClickListener {
-            if (poseLandmarkerHelper.minPoseDetectionConfidence >= 0.2) {
-                poseLandmarkerHelper.minPoseDetectionConfidence -= 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, raise pose detection score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.detectionThresholdPlus.setOnClickListener {
-            if (poseLandmarkerHelper.minPoseDetectionConfidence <= 0.8) {
-                poseLandmarkerHelper.minPoseDetectionConfidence += 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, lower pose tracking score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.trackingThresholdMinus.setOnClickListener {
-            if (poseLandmarkerHelper.minPoseTrackingConfidence >= 0.2) {
-                poseLandmarkerHelper.minPoseTrackingConfidence -= 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, raise pose tracking score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.trackingThresholdPlus.setOnClickListener {
-            if (poseLandmarkerHelper.minPoseTrackingConfidence <= 0.8) {
-                poseLandmarkerHelper.minPoseTrackingConfidence += 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, lower pose presence score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.presenceThresholdMinus.setOnClickListener {
-            if (poseLandmarkerHelper.minPosePresenceConfidence >= 0.2) {
-                poseLandmarkerHelper.minPosePresenceConfidence -= 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, raise pose presence score threshold floor
-        fragmentCameraBinding.bottomSheetLayout.presenceThresholdPlus.setOnClickListener {
-            if (poseLandmarkerHelper.minPosePresenceConfidence <= 0.8) {
-                poseLandmarkerHelper.minPosePresenceConfidence += 0.1f
-                updateControlsUi()
-            }
-        }
-
-        // When clicked, change the underlying hardware used for inference.
-        // Current options are CPU and GPU
-        fragmentCameraBinding.bottomSheetLayout.spinnerDelegate.setSelection(
-            viewModel.currentDelegate, false
-        )
-        fragmentCameraBinding.bottomSheetLayout.spinnerDelegate.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long
-                ) {
-                    try {
-                        poseLandmarkerHelper.currentDelegate = p2
-                        updateControlsUi()
-                    } catch(e: UninitializedPropertyAccessException) {
-                        Log.e(TAG, "PoseLandmarkerHelper has not been initialized yet.")
-                    }
-                }
-
-                override fun onNothingSelected(p0: AdapterView<*>?) {
-                    /* no op */
-                }
-            }
-
-        // When clicked, change the underlying model used for object detection
-        fragmentCameraBinding.bottomSheetLayout.spinnerModel.setSelection(
-            viewModel.currentModel,
-            false
-        )
-        fragmentCameraBinding.bottomSheetLayout.spinnerModel.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    p0: AdapterView<*>?,
-                    p1: View?,
-                    p2: Int,
-                    p3: Long
-                ) {
-                    poseLandmarkerHelper.currentModel = p2
-                    updateControlsUi()
-                }
-
-                override fun onNothingSelected(p0: AdapterView<*>?) {
-                    /* no op */
-                }
-            }
-    }
-*/
-    // Update the values displayed in the bottom sheet. Reset Poselandmarker
-    // helper.
-/*
-    private fun updateControlsUi() {
-        if(this::poseLandmarkerHelper.isInitialized) {
             fragmentCameraBinding.bottomSheetLayout.detectionThresholdValue.text =
                 String.format(
-                    Locale.US,
-                    "%.2f",
-                    poseLandmarkerHelper.minPoseDetectionConfidence
+                    Locale.US, "%.2f", viewModel.currentMinPoseDetectionConfidence
                 )
             fragmentCameraBinding.bottomSheetLayout.trackingThresholdValue.text =
                 String.format(
-                    Locale.US,
-                    "%.2f",
-                    poseLandmarkerHelper.minPoseTrackingConfidence
+                    Locale.US, "%.2f", viewModel.currentMinPoseTrackingConfidence
                 )
             fragmentCameraBinding.bottomSheetLayout.presenceThresholdValue.text =
                 String.format(
-                    Locale.US,
-                    "%.2f",
-                    poseLandmarkerHelper.minPosePresenceConfidence
+                    Locale.US, "%.2f", viewModel.currentMinPosePresenceConfidence
                 )
 
-            // Needs to be cleared instead of reinitialized because the GPU
-            // delegate needs to be initialized on the thread using it when applicable
-            backgroundExecutor.execute {
-                poseLandmarkerHelper.clearPoseLandmarker()
-                poseLandmarkerHelper.setupPoseLandmarker()
+            // When clicked, lower pose detection score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.detectionThresholdMinus.setOnClickListener {
+                if (poseLandmarkerHelper.minPoseDetectionConfidence >= 0.2) {
+                    poseLandmarkerHelper.minPoseDetectionConfidence -= 0.1f
+                    updateControlsUi()
+                }
             }
-            fragmentCameraBinding.overlay.clear()
+
+            // When clicked, raise pose detection score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.detectionThresholdPlus.setOnClickListener {
+                if (poseLandmarkerHelper.minPoseDetectionConfidence <= 0.8) {
+                    poseLandmarkerHelper.minPoseDetectionConfidence += 0.1f
+                    updateControlsUi()
+                }
+            }
+
+            // When clicked, lower pose tracking score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.trackingThresholdMinus.setOnClickListener {
+                if (poseLandmarkerHelper.minPoseTrackingConfidence >= 0.2) {
+                    poseLandmarkerHelper.minPoseTrackingConfidence -= 0.1f
+                    updateControlsUi()
+                }
+            }
+
+            // When clicked, raise pose tracking score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.trackingThresholdPlus.setOnClickListener {
+                if (poseLandmarkerHelper.minPoseTrackingConfidence <= 0.8) {
+                    poseLandmarkerHelper.minPoseTrackingConfidence += 0.1f
+                    updateControlsUi()
+                }
+            }
+
+            // When clicked, lower pose presence score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.presenceThresholdMinus.setOnClickListener {
+                if (poseLandmarkerHelper.minPosePresenceConfidence >= 0.2) {
+                    poseLandmarkerHelper.minPosePresenceConfidence -= 0.1f
+                    updateControlsUi()
+                }
+            }
+
+            // When clicked, raise pose presence score threshold floor
+            fragmentCameraBinding.bottomSheetLayout.presenceThresholdPlus.setOnClickListener {
+                if (poseLandmarkerHelper.minPosePresenceConfidence <= 0.8) {
+                    poseLandmarkerHelper.minPosePresenceConfidence += 0.1f
+                    updateControlsUi()
+                }
+            }
+
+            // When clicked, change the underlying hardware used for inference.
+            // Current options are CPU and GPU
+            fragmentCameraBinding.bottomSheetLayout.spinnerDelegate.setSelection(
+                viewModel.currentDelegate, false
+            )
+            fragmentCameraBinding.bottomSheetLayout.spinnerDelegate.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long
+                    ) {
+                        try {
+                            poseLandmarkerHelper.currentDelegate = p2
+                            updateControlsUi()
+                        } catch(e: UninitializedPropertyAccessException) {
+                            Log.e(TAG, "PoseLandmarkerHelper has not been initialized yet.")
+                        }
+                    }
+
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+                        /* no op */
+                    }
+                }
+
+            // When clicked, change the underlying model used for object detection
+            fragmentCameraBinding.bottomSheetLayout.spinnerModel.setSelection(
+                viewModel.currentModel,
+                false
+            )
+            fragmentCameraBinding.bottomSheetLayout.spinnerModel.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        p0: AdapterView<*>?,
+                        p1: View?,
+                        p2: Int,
+                        p3: Long
+                    ) {
+                        poseLandmarkerHelper.currentModel = p2
+                        updateControlsUi()
+                    }
+
+                    override fun onNothingSelected(p0: AdapterView<*>?) {
+                        /* no op */
+                    }
+                }
         }
-    }
-*/
+    */
+    // Update the values displayed in the bottom sheet. Reset Poselandmarker
+    // helper.
+    /*
+        private fun updateControlsUi() {
+            if(this::poseLandmarkerHelper.isInitialized) {
+                fragmentCameraBinding.bottomSheetLayout.detectionThresholdValue.text =
+                    String.format(
+                        Locale.US,
+                        "%.2f",
+                        poseLandmarkerHelper.minPoseDetectionConfidence
+                    )
+                fragmentCameraBinding.bottomSheetLayout.trackingThresholdValue.text =
+                    String.format(
+                        Locale.US,
+                        "%.2f",
+                        poseLandmarkerHelper.minPoseTrackingConfidence
+                    )
+                fragmentCameraBinding.bottomSheetLayout.presenceThresholdValue.text =
+                    String.format(
+                        Locale.US,
+                        "%.2f",
+                        poseLandmarkerHelper.minPosePresenceConfidence
+                    )
+
+                // Needs to be cleared instead of reinitialized because the GPU
+                // delegate needs to be initialized on the thread using it when applicable
+                backgroundExecutor.execute {
+                    poseLandmarkerHelper.clearPoseLandmarker()
+                    poseLandmarkerHelper.setupPoseLandmarker()
+                }
+                fragmentCameraBinding.overlay.clear()
+            }
+        }
+    */
     // Initialize CameraX, and prepare to bind the camera use cases
     private fun setUpCamera() {
         val cameraProviderFuture =
@@ -383,7 +387,7 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
         activity?.runOnUiThread {
             if (_fragmentCameraBinding != null) {
                 //fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-                  //  String.format("%d ms", resultBundle.inferenceTime)
+                //  String.format("%d ms", resultBundle.inferenceTime)
 
                 // Pass necessary information to OverlayView for drawing on the canvas
                 fragmentCameraBinding.overlay.setResults(
@@ -392,6 +396,7 @@ class CameraFragment : Fragment(), PoseLandmarkerHelper.LandmarkerListener {
                     resultBundle.inputImageWidth,
                     RunningMode.LIVE_STREAM
                 )
+
 
                 // Force a redraw
                 fragmentCameraBinding.overlay.invalidate()

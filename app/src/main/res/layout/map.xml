@@ -25,16 +25,19 @@ android:layout_height="match_parent">
         android:layout_marginBottom="16dp"
         android:background="@android:drawable/edit_text"
         android:hint="場所を入力"
-        android:padding="8dp" />
+        android:padding="8dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/goto_KANSAI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="232dp"
+        android:layout_height="77dp"
         android:layout_below="@+id/editTextLocation"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="86dp"
         android:backgroundTint="#4CAF50"
         android:text="行ってみる！"
         android:visibility="invisible" />
@@ -44,9 +47,9 @@ android:layout_height="match_parent">
         android:layout_width="match_parent"
         android:layout_height="418dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="221dp"
+        android:layout_marginTop="165dp"
         android:src="@drawable/ya4"
-        android:visibility="invisible"
+        android:visibility="visible"
         tools:srcCompat="@drawable/ya4" />
 
     <!--    将来用: 画像-->
