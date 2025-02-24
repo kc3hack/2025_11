@@ -1,41 +1,77 @@
-# MediaPipe Tasks Pose Landmark Detection Android Demo
+# 投げたが吉日！ダーツ de KANSAI再発見！ 
+<!-- プロダクト名に変更してください -->
 
-### Overview
+![プロダクト名](https://github.com/kc3hack/2025_11/blob/main/logo_snap.png)
+<!-- プロダクト名・イメージ画像を差し変えてください -->
 
-This is a camera app that can detects landmarks on a person either from continuous camera frames seen by your device's back camera, an image, or a video from the device's gallery using a custom **task** file.
 
-The task file is downloaded by a Gradle script when you build and run the app. You don't need to do any additional steps to download task files into the project explicitly unless you wish to use your own landmark detection task. If you do use your own task file, place it into the app's *assets* directory.
+## チーム11　さんたく
 
-This application should be run on a physical Android device to take advantage of the camera.
+<!-- チームIDとチーム名を入力してください -->
 
-![Pose Landmarker Demo](pose_landmarker.png?raw=true "Pose Landmarker Demo")
-[Public domain video from Lance Foss](https://www.youtube.com/watch?v=KALIKOd1pbA)
 
-## Build the demo using Android Studio
+## 背景・課題・解決されること
 
-### Prerequisites
+<!-- テーマ「関西をいい感じに」に対して、考案するプロダクトがどういった(Why)背景から思いついたのか、どのよう(What)な課題があり、どのよう(How)に解決するのかを入力してください -->
+現在、関西のいわゆる観光地と言われる場所では、オーバーツーリズムの問題や、来る万博による観光客の増加による課題があります。一方で、地方の田舎では観光客の減少や過疎化の問題があります。
+我々の作成するアプリは、上記のような問題を改善すべく、今までスポットの当たらなかった観光名所に行く契機とすることを目的としています。
+関西にはまだあまり知られていない観光地がたくさんありますが、普通に検索したのではなかなか出会えません。ダーツという偶然性を利用することで、マイナーな観光地に興味を持ってもらうきっかけとしたいと考えています。
 
-*   The **[Android Studio](https://developer.android.com/studio/index.html)** IDE. This sample has been tested on Android Studio Dolphin.
 
-*   A physical Android device with a minimum OS version of SDK 24 (Android 7.0 -
-    Nougat) with developer mode enabled. The process of enabling developer mode
-    may vary by device.
+## プロダクト説明
 
-### Building
+<!-- 開発したプロダクトの説明を入力してください -->
+画面に向かってダーツを投げるモーションをすると、関西のどこかに着地します。着地地点では、指定したジャンルに応じたおすすめ観光スポットが表示されます、また、飛んだ場所に応じて、ダーツ熟練度が表示される仕掛けもあります。
 
-*   Open Android Studio. From the Welcome screen, select Open an existing
-    Android Studio project.
 
-*   From the Open File or Project window that appears, navigate to and select
-    the mediapipe/examples/pose_landmarker/android directory. Click OK. You may
-    be asked if you trust the project. Select Trust.
 
-*   If it asks you to do a Gradle Sync, click OK.
+## 操作説明・デモ動画
+[デモ動画はこちら](https://youtu.be/Gnr7fpFikRs)
+<!-- 開発したプロダクトの操作説明について入力してください。また、操作説明デモ動画があれば、埋め込みやリンクを記載してください -->
 
-*   With your Android device connected to your computer and developer mode
-    enabled, click on the green Run arrow in Android Studio.
 
-### Models used
+最初の画面で｢ダーツを投げる｣を選択するとフロントカメラが起動します。起動画面で画面の指示に従い、ダーツを構える->投げるという動きをすると矢を投げたことが検知され、画面上で矢が飛んで行きます
 
-Downloading, extraction, and placing the models into the *assets* folder is
-managed automatically by the **download.gradle** file.
+ダーツを構えたことの検知はgoogleが提供するmediapipeというライブラリを用い、手首、肘、肩の3点について画面上のxyz座標を取得し、腕の角度や3点の位置関係から構えや投げた位置を検知し、結果に反映しています。
+
+ダーツが飛ぶ先をマップで表示する機能の実現のために、Google mapsを用いています。飛び先の緯度経度に応じた住所を取得し、場所に行くボタンを表示します。
+
+場所に行くボタンを押すと、旅行サイトのじゃらんから取得した観光スポットの情報が表示されます。表示される情報は「誰と行くか（子連れ・カップル・友達・シニア・一人旅）」や「ジャンル(観光・グルメ)」に応じた観光スポットを切り替えることができます。スポット名または画像をクリックすると、観光名所の詳細ページ(じゃらん)に遷移します。
+また、投げたスポットに応じて、ダーツ熟練度が表示される仕掛けもあります。
+
+ダーツは何度でも投げることができます。
+
+
+## 注力したポイント
+
+<!-- 開発したプロダクトの中で、特に注力して作成した箇所・ポイントについて入力してください -->
+### アイデア面
+偶然性を生むためにダーツというUIを採用しました。ダーツについて、画面上の操作ではなく、実際の動きをカメラで認識し、結果に反映させました。
+
+
+### デザイン面
+実際に矢が飛んでいくような動きをgooglemapのフォーカスで実現しました。
+
+### その他
+大手旅行サイト(じゃらん)から情報を取ってくることで、どこに着弾しても自動で最新の情報が表示されるように実装しました。
+
+## 使用技術
+### プラットフォーム
+- Android Studio
+
+### 使用ライブラリその他
+- googlemap API
+- mediapipe
+- jsoup
+
+### 使用言語
+- kotlin
+- java
+
+<!-- 使用技術を入力してください -->
+
+
+<!--
+markdownの記法はこちらを参照してください！
+https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+-->
