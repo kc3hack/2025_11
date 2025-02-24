@@ -1,0 +1,158 @@
+[
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_kansai_overview.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\kansai_overview.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ic_baseline_photo_library_24.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ic_baseline_photo_library_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_launch.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\launch.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_activity_type.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_info_bottom_sheet.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\info_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_media_pipe_banner.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\media_pipe_banner.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ic_baseline_photo_camera_24.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ic_baseline_photo_camera_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ic_plus.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ic_plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ic_baseline_add_24.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_activity_select.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ya4.gif.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ya4.gif"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_ic_minus.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\ic_minus.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_gurume.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\gurume.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_recommended.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\recommended.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_kansai.jpg.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\kansai.jpg"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-hdpi_logo_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-hdpi\\logo_round.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\color_bg_nav_item.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\color\\bg_nav_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-mdpi_logo.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-mdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_map.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\map.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_kankou.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\kankou.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_logo_new.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\logo_new.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_fragment_camera.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\fragment_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\menu_menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\menu\\menu_bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\layout_fragment_gallery.xml.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\drawable_icn_chevron_up.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\drawable\\icn_chevron_up.png"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-merged_res-53:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.poselandmarker.app-merged_res-53:/layout_map.xml.flat",
+        "source": "com.google.mediapipe.examples.poselandmarker.app-main-55:/layout/map.xml"
+    }
+]

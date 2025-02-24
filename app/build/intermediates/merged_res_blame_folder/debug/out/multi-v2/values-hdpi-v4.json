@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-51:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\tonam\\.gradle\\caches\\8.9\\transforms\\d33c6e0214fe5657fac357e3a378db6e\\transformed\\appcompat-1.5.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-51:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\tonam\\.gradle\\caches\\8.9\\transforms\\f712af4c271c18cbf0a6f73deb4a5a8c\\transformed\\material-1.7.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

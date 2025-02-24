@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 結果表示エリア -->
+
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="367dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:text="に行くでー"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="367dp"
+        android:layout_height="108dp"
+        app:srcCompat="@drawable/kankou" />
+
+    <Button
+        android:id="@+id/sightseeing"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+
+
+        android:scrollbarThumbVertical="@drawable/gurume"
+        android:text="観光するでー"
+
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="387dp"
+        android:layout_height="46dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="116dp"
+        app:srcCompat="@drawable/gurume" />
+
+    <Button
+        android:id="@+id/food"
+        android:layout_width="329dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+
+
+        android:text="食べるでー"
+
+        android:textSize="30sp" />
+
+</LinearLayout>

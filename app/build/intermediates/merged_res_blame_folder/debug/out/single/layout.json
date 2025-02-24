@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\fragment_camera.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\fragment_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\activity_type.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\map.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\map.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\recommended.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\recommended.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\fragment_gallery.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:/layout/map.xml",
+        "source": "com.google.mediapipe.examples.poselandmarker.app-main-55:/layout/map.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\info_bottom_sheet.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\info_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\launch.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\launch.xml"
+    },
+    {
+        "merged": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-mergeDebugResources-52:\\layout\\activity_select.xml",
+        "source": "C:\\Users\\tonam\\.gradle\\daemon\\8.9\\com.google.mediapipe.examples.poselandmarker.app-main-55:\\layout\\activity_select.xml"
+    }
+]
