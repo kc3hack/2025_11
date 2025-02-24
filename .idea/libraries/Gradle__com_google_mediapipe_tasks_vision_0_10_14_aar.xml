@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.mediapipe:tasks-vision:0.10.14@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/c329e0f0325bd7c28b3427b86db9c58a/transformed/tasks-vision-0.10.14/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/c329e0f0325bd7c28b3427b86db9c58a/transformed/tasks-vision-0.10.14/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
